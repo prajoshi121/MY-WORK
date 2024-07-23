@@ -1,0 +1,45 @@
+import time
+import winsound
+ #function to set an alarm
+
+def set_alarm():
+    alarm_time=input("enter the alarem time(HH:MM):")
+    while True:
+        current_time=time.strftime("%H:%M")
+        if current_time==alarm_time:
+            print("wake up,it is time to get up")
+            winsound.Beep(1000,1000) #will beep for 1 second
+            break
+
+#function to snooze the alarm
+def snooze_alarm():
+    snooze_time=5
+    alarm_time=time.time()+snooze_time*60
+    while time.time()<alarm_time:
+        pass
+    print("snooze time is over,wake up")
+    winsound.Beep(1000,10000)
+
+#function to stop alarm
+def stop_alarm():
+    print("alarm stopped")
+
+while True:
+    print("options")
+    print("select 1 for setting the alarm")
+    print("select 2 for snoozing the alarm")
+    print("select 3 to stop the alarm")
+    print("select 4 to stop the alarm")
+
+    choice=int(input("enter your choice:  "))
+    if choice==1:
+        set_alarm()
+    elif choice==2:
+        snooze_alarm()
+    elif choice==3:
+        stop_alarm()
+    elif choice==4:
+        break
+    else:
+        print("invalid input.please enter the correct choice")
+
