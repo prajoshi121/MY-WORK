@@ -1,0 +1,33 @@
+import random
+l=list(range(1,101))
+print(l)
+i=0
+while i<5:
+    lower = int(input("select your lower number and higher number:"))
+    higher = int(input("select your lower number and higher number:"))
+
+
+    if lower>higher:
+        print("invalid range")
+    else:
+        random_numbers = []
+    for _ in range(6):
+
+
+            random_num=random.randint(lower,higher)
+            random_numbers.append(random_num)
+            print(f"system has generated 6 number. now it is your time to guess the number")
+            for num in random_numbers:
+                guess = int(input("now choose your guessed numver:"))
+
+            if guess==random_num:
+                print("congratulations you won this game")
+            else:
+                print("try again")
+            i=i+1
+
+
+
+
+
+
